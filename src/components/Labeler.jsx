@@ -29,8 +29,8 @@ function Labeler() {
   };
 
   return (
-    <div className='container mx-auto p-6 bg-gray-100'>
-      <div className='bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4'>
+    <div className='container mx-auto p-6'>
+      <div className='bg-white shadow-lg rounded px-8 pt-6 pb-8 mb-4'>
         <section>
           <h1 class='mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-white'>
             CiteR!ght
@@ -49,13 +49,13 @@ function Labeler() {
                 <img
                   src={imageSrc}
                   alt='Upload an image'
-                  className='image-placeholder w-full h-auto border border-gray-300'
+                  className='image-placeholder max-w-full max-w-30 h-auto border border-gray-300'
                 />
                 {labelVisible && <div className='italic text-xs'>{label}</div>}
               </div>
 
               {/* Processing Container */}
-              <div>
+              <div className='flex flex-col'>
                 {/* Upload Stage */}
                 <div className='pb-4'>
                   <input
@@ -78,12 +78,12 @@ function Labeler() {
                   <input
                     type='text'
                     placeholder='Enter label text'
-                    className='border border-gray-300 p-2 mb-2'
+                    className='border border-gray-300 p-2 mb-2 w-3/5 '
                     onChange={(e) => setLabel(e.target.value)}
                   />
                   <button
                     onClick={putLabel}
-                    class='relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-teal-300 to-lime-300 group-hover:from-teal-300 group-hover:to-lime-300 dark:text-white dark:hover:text-gray-900 focus:ring-4 focus:outline-none focus:ring-lime-200 dark:focus:ring-lime-800'
+                    className='relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-teal-300 to-lime-300 group-hover:from-teal-300 group-hover:to-lime-300 dark:text-white dark:hover:text-gray-900 focus:ring-4 focus:outline-none focus:ring-lime-200 dark:focus:ring-lime-800 w-auto'
                   >
                     <span class='relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0'>
                       Put Labeling
