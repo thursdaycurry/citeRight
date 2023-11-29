@@ -66,7 +66,7 @@ function Labeler() {
               <div className='image-container pb-3 mb-4 px-2'>
                 <img
                   src={imageSrc}
-                  alt='Upload an image'
+                  alt='default'
                   className='image-placeholder max-w-full max-w-30 h-auto border border-gray-300'
                 />
                 {labelVisible && <div className='italic text-xs'>{label}</div>}
