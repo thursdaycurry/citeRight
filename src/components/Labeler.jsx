@@ -1,11 +1,19 @@
 import React, { useState } from 'react';
 import html2canvas from 'html2canvas';
+import Modal from './Modal';
+import Footer from './Footer';
 
 function Labeler() {
   const [imageSrc, setImageSrc] = useState(
     'https://via.placeholder.com/400x300'
   );
-  const [label, setLabel] = useState('Sketch of Albrecht Dürer');
+
+  // Modal
+  const [showModal, setShowModal] = useState(false);
+  const openModal = () => setShowModal(true);
+  const closeModal = () => setShowModal(false);
+
+  const [label, setLabel] = useState('');
   const [labelVisible, setLabelVisible] = useState(false);
 
   const loadImage = (event) => {
@@ -38,8 +46,18 @@ function Labeler() {
           <p class='mb-6 text-lg font-normal text-gray-500 lg:text-xl sm:px-16 xl:px-48 dark:text-gray-400'>
             "CiteR!ght, the seamless solution for adding precise text labels to
             your images with just a few clicks!"
+            {'  '}
+            {/* Tutorial Button */}
+            <button
+              onClick={openModal}
+              className='text-blue-700 hover:text-white border border-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-1.5 py-1 text-center me-2 mb-2 dark:border-blue-500 dark:text-blue-500 dark:hover:text-white dark:hover:bg-blue-500 dark:focus:ring-blue-800'
+            >
+              Tutorial
+            </button>
+            <Modal show={showModal} onClose={closeModal} />
           </p>
         </section>
+
         <main className='flex'>
           {/* Left Section */}
           <div className='w-3/4 pr-4 border-r-2 border-gray-300'>
@@ -113,6 +131,7 @@ function Labeler() {
             </div>
           </div>
         </main>
+        <Footer />
       </div>
     </div>
   );
