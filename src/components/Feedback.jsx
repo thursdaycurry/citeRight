@@ -25,10 +25,6 @@ const FeedbackModal = ({ isOpen, onClose }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    // const formId = process.env.FORMID;
-    // const formEntryRating = process.env.FORMENTRYRATING;
-    // const formEntryComment = process.env.FORMENTRYCOMMENT;
-
     const formId = process.env.REACT_APP_FORMID;
     const formEntryRating = process.env.REACT_APP_FORMENTRYRATING;
     const formEntryComment = process.env.REACT_APP_FORMENTRYCOMMENT;
@@ -39,7 +35,7 @@ const FeedbackModal = ({ isOpen, onClose }) => {
     formData.append(formEntryComment, comment);
 
     try {
-      const response = await fetch(googleFormUrl, {
+      await fetch(googleFormUrl, {
         method: 'POST',
         body: formData,
         mode: 'no-cors', // Necessary to avoid CORS error
@@ -78,7 +74,7 @@ const FeedbackModal = ({ isOpen, onClose }) => {
           </div>
           <div className='items-center px-4 py-3'>
             <button
-              className='px-4 py-2 bg-blue-500 text-white text-base font-medium rounded-md w-full shadow-sm hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-300'
+              className='px-4 py-2 bg-gray-500 text-white text-base font-medium rounded-md w-full shadow-sm hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-300'
               onClick={handleSubmit}
             >
               Submit Feedback
