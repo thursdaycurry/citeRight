@@ -35,10 +35,10 @@ const Modal = ({ show, onClose }) => {
           </button>
         </div>
         <img
-          src={process.env.PUBLIC_URL + '/image/citeright_tutorial.gif'}
+          src={process.env.PUBLIC_URL + '/citeright_tutorial.gif'}
           alt='Animated content'
         />
-        <ol>
+        <ol className='text-sm'>
           <li>1. Upload</li>
           <li>2. Label it!</li>
           <li>3. Download</li>
