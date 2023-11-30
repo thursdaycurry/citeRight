@@ -40,7 +40,7 @@ function Labeler() {
     <div className='container mx-auto p-6'>
       <div className='bg-white shadow-lg rounded px-8 pt-6 pb-8 mb-4'>
         <section>
-          <h1 class='mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-white'>
+          <h1 class='mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl'>
             CiteR!ght
           </h1>
           <p class='mb-6 text-lg font-normal text-gray-500 lg:text-xl sm:px-16 xl:px-48 dark:text-gray-400'>
@@ -63,11 +63,11 @@ function Labeler() {
           <div className='w-3/4 pr-4 border-r-2 border-gray-300'>
             <div className='items-center'>
               {/* Image Container */}
-              <div className='image-container pb-3 mb-4 px-2'>
+              <div className='image-container pb-3 mb-4'>
                 <img
                   src={imageSrc}
                   alt='default'
-                  className='image-placeholder max-w-full max-w-30 h-auto border border-gray-300'
+                  className='image-placeholder max-w-full max-w-30 h-auto '
                 />
                 {labelVisible && <div className='italic text-xs'>{label}</div>}
               </div>
